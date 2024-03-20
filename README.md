@@ -15,7 +15,8 @@
        * Converts the DataFrame into SQL tables, ensuring seamless data transformation.
   
 ### 4. Streamlit Visualization:
-       * Builds an interactive web application using the streamlit library where users can enter Channel ID and view the Channel Details
+       * Builds an interactive web application using the streamlit library 
+       * Users can enter Channel ID and view the Channel Details
 
 
 
