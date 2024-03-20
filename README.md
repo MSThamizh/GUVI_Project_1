@@ -18,5 +18,10 @@ The workflow of this project can be summarized as follows:
 - **MySQL**: Relational database used for data transformation and warehousing.
 - **Streamlit**: Python library for building interactive web applications.
 
+## Usage
 
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MSThamizh/YouTube-Data-Harvesting-and-Warehousing.git
 
