@@ -20,11 +20,11 @@ The workflow of this project can be summarized as follows:
 
 ## References
 
-- **Python**: [(https://docs.streamlit.io/)](https://docs.python.org/3/)
+- **Python**: [https://docs.python.org/3/](https://docs.python.org/3/)
 - **Youtube API**: [https://developers.google.com/youtube](https://developers.google.com/youtube/v3/getting-started)
-- **MongoDB Documentation**: [(https://www.mongodb.com/)](https://www.mongodb.com/)
-- **MySQL Documentation**: [(https://www.mysql.com/)](https://www.mysql.com/)
-- **Streamlit Documentation**: [(https://docs.streamlit.io/library/api-reference)](https://docs.streamlit.io/library/api-reference)
+- **MongoDB Documentation**: [https://www.mongodb.com/](https://www.mongodb.com/)
+- **MySQL Documentation**: [https://www.mysql.com/](https://www.mysql.com/)
+- **Streamlit Documentation**: [https://docs.streamlit.io/library/api-reference](https://docs.streamlit.io/library/api-reference)
   
 
 
