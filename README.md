@@ -5,11 +5,8 @@
 The goal of this project is to develop a Streamlit application that enables users to access and analyze data from multiple YouTube channels efficiently. The application should provide the following features:
 
 - **Data Retrieval**: Allow users to input a YouTube channel ID and retrieve relevant data such as channel name, subscribers, total video count, playlist ID, video ID, likes, dislikes, and comments for each video using the Google API.
-
 - **Data Collection**: Provide users with the ability to collect data for the YouTube channels simultaneously and store them in a data lake by clicking a button.
-
 - **Data Storage**: Offer options to store the collected data in  MySQL database for efficient storage and retrieval.
-
 - **Data Search and Retrieval**: Allow users to search and retrieve data from the SQL database using different search options.
 
 ## Workflow
