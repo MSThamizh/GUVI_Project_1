@@ -18,6 +18,13 @@
        * Builds an interactive web application using the streamlit library 
        * Users can enter Channel ID and view the Channel Details
 
+## Technologies Used
+
+- **Python**: Main programming language used for scripting and development.
+- **YouTube API**: Used for retrieving data from YouTube.
+- **MongoDB**: NoSQL database used for storing raw data.
+- **MySQL**: Relational database used for data transformation and warehousing.
+- **Streamlit**: Python library for building interactive web applications.
 
 
 
