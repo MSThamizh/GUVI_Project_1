@@ -11,7 +11,8 @@
   Stores the retrieved data (Temporary Storage) in a suitable format.
   
 3.Transfer Data to SQL:
-  Transfers data from MongoDB to SQL
+  Extract data from MongoDB collections, facilitating smooth conversion into a DataFrame.
+  Converts the DataFrame into SQL tables, ensuring seamless data transformation.
   
 4.Streamlit Visualization:
   Builds an interactive web application using the streamlit library where users can enter Channel ID and view the Channel Details
