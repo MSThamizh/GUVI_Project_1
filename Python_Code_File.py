@@ -296,7 +296,7 @@ def main():
 
     # Create a sidebar navigation menu
     st.sidebar.title(":red[YouTube] Data Harvesting and Warehousing")
-    st.sidebar.subheader(":blue[Streamlit retrieving data from the YouTube API, storing the data in SQL as a warehouse, querying the data warehouse with SQL, and displaying the data in the Streamlit app.],")
+    st.sidebar.subheader(":blue[Streamlit retrieving data from the YouTube API, storing the data in SQL as a warehouse, querying the data warehouse with SQL, and displaying the data in the Streamlit app.]")
     page = st.sidebar.selectbox(":orange[***Select the Operation***]", ["Data to MongoDB", "MongoDB to MYSQL", "Table View", "Queries"])
 
     # Display different pages based on the selection
@@ -398,7 +398,7 @@ def show_queries():
         
     elif question=='3.What are the top 10 most viewed videos and their respective channels?':
 
-        query_3 = 'select VideoName,ChannelName,VideoViews from videos order by VideoViews limit 10'
+        query_3 = 'select VideoName,ChannelName,VideoViews from videos order by VideoViews desc limit 10'
         mycursor.execute(query_3)
 
         result = mycursor.fetchall()
@@ -406,7 +406,7 @@ def show_queries():
         for data in result:
             query__result_3.append(data)
 
-        df_3=pd.DataFrame(query__result_3,columns=['Video_Name', 'Channel_Name', 'Video_Count'])
+        df_3=pd.DataFrame(query__result_3,columns=['Video_Name', 'Channel_Name', 'Video_Views'])
         st.write(df_3)
 
     elif question=='4.How many comments were made on each video, and what are their corresponding video names?':
