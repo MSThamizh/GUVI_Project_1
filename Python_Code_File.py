@@ -142,49 +142,26 @@ def channel_data(channelID):
 
 
 # Data from MongoDB to MySQL
-def show_data():
+def show_data(channel_dropdown):
 
     # Getting Data from MongoDB
     channel_list=[]
-    for data in col.find({},{'_id':0,'channel_info':1}):
+    for data in col.find({'channel_info.channel_name':channel_dropdown},{'_id':0}):
         channel_list.append(data['channel_info'])
 
     df_channel=pd.DataFrame(channel_list)
 
     video_list=[]
-    for data in col.find({},{'_id':0,'video_info':1}):
-        for video_info_details in data['video_info']:
-            video_data = (
-                video_info_details['Channel_Id'], 
-                video_info_details['Channel_Name'],
-                video_info_details['Video_Id'], 
-                video_info_details['Video_Name'],
-                video_info_details['Video_Description'], 
-                video_info_details['Video_Published'],
-                video_info_details['Video_Views'], 
-                video_info_details['Video_Likes'],
-                video_info_details['Video_Comment_Count'], 
-                video_info_details['Video_Duration'],
-                video_info_details['Video_Thumbnail'], 
-                video_info_details['Video_Caption_Status']
-            )
-            video_list.append(video_data)
+    for data in col.find({'channel_info.channel_name':channel_dropdown},{'_id':0}):
+        video_list.append(data['video_info'])
 
-    df_videos=pd.DataFrame(video_list)
+    df_videos=pd.DataFrame(video_list[0])
 
     comment_list=[]
-    for data in col.find({},{'_id':0,'comment_info':1}):
-        for comment_info_details in data['comment_info']: 
-            comment_data = (
-                comment_info_details['Video_ID'], 
-                comment_info_details['Comment_ID'],
-                comment_info_details['Comment_Text'], 
-                comment_info_details['Comment_Author'],
-                comment_info_details['Comment_Published']
-            )
-            comment_list.append(comment_data)
+    for data in col.find({'channel_info.channel_name':channel_dropdown},{'_id':0}):
+        comment_list.append(data['comment_info'])
             
-    df_comment=pd.DataFrame(comment_list)
+    df_comment=pd.DataFrame(comment_list[0])
 
     # Creating Tables in MySQL
     connection= mysql.connector.connect(host="localhost",user="root",password="SQL@2023",database="youtube_data")
@@ -334,9 +311,19 @@ def show_data_mongodb():
 
 
 def show_data_mysql():
+    connection = MongoClient("mongodb+srv://thamizhvanan2000:8dRl4X258bBAnMN6@cluster0.pculefa.mongodb.net/")
+    db=connection['Youtube']
+    col = db['Channel_Data']
+    
+    channel_list_dropdown=[]
+    for data in col.find({},{'_id':0,'channel_info':1}):
+            channel_list_dropdown.append(data['channel_info']['channel_name'])
+    
+    channel_dropdown=st.selectbox(':green[Select the channel]',channel_list_dropdown)
+
     SQLButton = st.button('Transfer Data to MySQL')  
     if SQLButton:
-        show_data()
+        show_data(channel_dropdown)
         st.success("Tables created successfully in MySQL")
 
 
